@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Check String Palindrome</title>
+<head>
+<script type="text/javascript">
+    function chkStringPalindrome(){
+        var isPalindrome=true;
+        var resultMsg=document.getElementById("resultMsg");
+        var strElement=document.getElementById("getStr");
+        var str="";
+        if(strElement!=null){
+           str=strElement.value;
+           var strLength=str.length;
+           var mid=strLength/2;
+           for(i=0;i<mid;i++){
+               if(str.charAt(i)!=str.charAt(strLength-i-1)){
+                   isPalindrome=false;
+                   break;
+               }
+           }
+        }
+        if(isPalindrome){
+            resultMsg.innerHTML="String \""+str+"\" is Palindrome String";
+        }else{
+            resultMsg.innerHTML="String \""+str+"\" is not Palindrome String";
+        }
+    }
+</script>
+</head>
+<body>
+    <h3>Javascript Program to Check String Palindrome</h3>
+    <span>Enter String</span>
+    <input type="text" name="getStr" id="getStr"/>
+    <button onclick="chkStringPalindrome();">Check Palindrome</button>
+	<div id="resultMsg"></div>
+</body>
+</html>
